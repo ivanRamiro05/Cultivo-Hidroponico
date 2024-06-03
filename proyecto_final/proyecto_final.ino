@@ -61,7 +61,7 @@ void mostrarBienvenida() {
   lcd.setCursor(0, 0);
   lcd.print("   BIENVENIDO  ");
   lcd.setCursor(0, 1);
-  lcd.print("      GEFE");
+  lcd.print("      JEFE");
   delay(2000);
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -94,7 +94,7 @@ void cambiarCultivo(int cultivo) {
       break;
     case 3:
     lcd.clear();
-      lcd.print("3) FRIJOL NEGRO ");
+      lcd.print("3) PEPINO ");
       lcd.setCursor(0, 1);
       lcd.print("RIEGO 2.5H T 25");
       tiempo1=9000000;
@@ -166,7 +166,7 @@ void mostrarMenu(int menu) {
     case 1:
       lcd.print("CONFIG: 1)TOMATE ");
       lcd.setCursor(0, 1);
-      lcd.print("2)FRIJOL 3)POROTO");
+      lcd.print("2)FRIJOL 3)PEPINO");
       break;
     case 2:
       lcd.print("4)GARBANZOS");
@@ -268,9 +268,15 @@ Serial.println(humedad2);
 
 if (humedad2 <= 400) {
     digitalWrite(buzzer, HIGH);
+    lcd.clear();
+    lcd.print("DEPOSITO DE AGUA  ");
+       lcd.setCursor(0, 1);
+       lcd.print("    VACIO  ");
+
   } else {
-    if 
-    digitalWrite(buzzer, LOW); // Apagar el buzzer si la temperatura es mayor a 20 
+    digitalWrite(motoBomba, HIGH);
+    digitalWrite(buzzer, LOW);
+
   }
  if (tiempo -tiempo2>=10000)
  { 
